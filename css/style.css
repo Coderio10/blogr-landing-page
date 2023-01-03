@@ -1,0 +1,386 @@
+/* font API */
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:wght@400;500;700&display=swap');
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+    font-size: clamp(0.875rem, 2.2vh, 1rem);
+}
+:root{
+    --CTAtext: hsl(356, 100%, 66%);
+    --CTAhoverbackground: hsl(355, 100%, 74%);
+    --headings: hsl(208, 49%, 24%);
+    --text: hsl(0, 0%, 100%);
+    --footertext: hsl(240, 2%, 79%);
+    --bodycopy: hsl(207, 13%, 34%);
+    --footerbackground: hsl(240, 10%, 16%);
+    --gradientlightred: hsl(13, 100%, 72%);
+    --gradientred: hsl(353, 100%, 62%);
+    --Verydarkgrayblue: hsl(237, 17%, 21%);
+    --Verydarkdesaturatedblue: hsl(237, 23%, 32%);
+}
+h1, h2, h3, p{
+    font-family: "Overpass", sans-serif;
+}
+h3{
+    font-size: 28px;
+}
+p{
+    font-family: 'Ubuntu', sans-serif; 
+}
+a{
+    color: var(--text);
+    font-family: "Overpass", sans-serif;
+}
+button{
+    font-family: "Overpass", sans-serif; 
+}
+/* header */
+    header{
+        background:  linear-gradient( to right, var(--gradientlightred), var(--gradientred)), url(../images/bg-pattern-intro-desktop.svg); 
+        background-blend-mode: overlay;
+        background-size: 150%;
+        background-position: left;
+        position: relative;
+        border-bottom-left-radius: 100px;
+    }
+    .mob-div{
+        display: none;
+    }
+/*--------------------------------------- nav bar----------------------------- */
+nav{
+    transition: 0.3s ease-out;
+    padding: 50px 30px;
+    padding-left: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav div{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+/* links */
+nav .links{
+    display: flex;
+    gap: 35px;
+    justify-content: center;
+}
+nav .links label{
+    color: var(--text);
+    font-family: "Overpass", sans-serif; 
+    font-size: 18px;
+    position: relative;
+}
+/* Dropdown */
+nav .links ul{
+    background-color: var(--text);
+    position: absolute;
+    text-align: left;
+    width: 150px;
+    top: 90px;
+    transition: top .5s; 
+    visibility: hidden;
+    opacity: 0;
+    z-index: 100;
+}
+.links li:hover > ul{
+    top: 85px;
+    visibility: visible;
+    opacity: 1;
+}
+.links ul li{
+    padding: 7px 0;
+}
+.links ul li:hover{
+    background-color: var(--headings);
+}
+.links ul li a{
+    color: var(--headings);
+    text-align: left;
+    font-size: 16px;
+    padding: 10px 20px;
+    width: 100%;
+}
+.links ul li a:hover{
+    color: var(--text);  
+}
+/* nav logo */
+    .lg{
+      float: left;
+    }
+    .logo{
+        padding-left: 30px;
+    }
+/* nav section  btn */
+    nav .button{
+        display: flex;
+        padding: 10px 0px;
+        float: right;
+    }
+/* signup */
+    nav .button  .signup{
+        background-color: var(--text);
+        padding: 18px 40px;
+        border-radius: 30px;
+        font-size: 18px;
+        color: var(--CTAtext);
+    }
+    nav .button  .signup:hover{
+        background-color: var(--CTAhoverbackground);
+        color: var(--text);
+    }
+/* login */
+    nav .button .login{
+        padding: 18px 40px;
+        margin-right: 5px;
+        font-size: 18px;
+    }
+    nav .button .login:hover{
+        background-color: var(--text);
+        border-radius: 30px;
+        color: var(--CTAhoverbackground);
+    } 
+/* Hamburger  */
+.hamburger{
+    display: none;
+    cursor: pointer;
+}
+.hamburger .bar{
+        background-color: var(--text);
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        display: inline;
+        transition: .3s ease;
+        -webkit-transition: all 0.3s ease;
+}
+/* -------------------------------------After Nav----------------------------------------------- */
+/* head text */
+    .headtext{
+        text-align: center;
+        color: var(--text);
+    }
+    .headtext h1{
+        font-size: 50px;
+        padding: 90px 0px 20px 0px;
+    }
+    .headtext p{
+        font-size: 16px;
+    }
+/* After button */
+.cntbtn{
+    margin: 20px auto;
+    text-align: center;
+}
+.cntbtn .btn1{
+    background-color: var(--text);
+    padding: 20px 40px;
+    border-radius: 30px;
+    color: var(--CTAtext);
+    margin: 30px 15px 0px 0px;
+    font-weight: 600;
+    border-style: none;
+    border: 2px solid var(--text);
+}
+.cntbtn .btn2{
+    color: var(--text);
+    background: var(--CTAtext);
+    padding: 20px 50px;
+    border-style: none;
+    margin: 30px 20px 0px 0px;
+    border: 2px solid var(--text);
+    border-radius: 30px;
+    font-weight: 600;
+} 
+.cntbtn .btn2:hover{
+    background-color: var(--text);
+    border-radius: 30px;
+    color: var(--CTAhoverbackground);   
+}
+.cntbtn .btn1:hover{
+    color: var(--text);
+    background: var(--CTAhoverbackground);
+    padding: 20px 40px;
+    border-style: none;
+    border: 2px solid var(--CTAhoverbackground);
+    border-radius: 30px;
+} 
+.aftnav{
+    padding-bottom: 7%;
+    padding-top: 20px;
+}
+/* text before section one */
+.be4sec{
+    font-weight: 600;
+    padding-top: 50px;
+    color: var(--Verydarkdesaturatedblue);
+}
+.be4sec .head{
+    text-align: center;
+    font-size: 36px;
+    
+}
+/*------------------------------------------ section 1 styling begins ------------------------*/
+.sec-1{
+    color: var(--Verydarkgrayblue);
+    display: flex;
+    /* border: 1px solid orangered; */
+    overflow-x: hidden;
+    position: relative;
+    align-items: center;
+}
+/* row 1 */
+.sec-1 .row-1{
+    /* border: 1px solid orangered; */
+    flex-basis: 55%;
+    padding-right: 2%;
+    padding-left: 8.5%;
+}
+.sec-1 .row-1 h3{
+    padding: 20px 0px 10px 0;
+ }
+/* row-2 */
+.sec-1 .row-2{
+    /* border: 1px solid orangered; */
+    flex-basis: 45%;
+    width: 45%;
+}
+.sec-1 .row-2 .camera{ 
+    display: block;
+    /* margin-left: 88px; */
+    margin-right: -88px;
+    width: 40em;   
+}
+
+/* ------------------------------------section 1 styling ends--------------------------- */
+/* -----------------------------------section 2 stylings begins------------------------------- */
+.sec-2{
+    background-image: url(/images/bg-pattern-circles.svg);
+    background-repeat: no-repeat; 
+    background-position: 0% 90%;
+    background-size: 50%;
+    background-color: var(--Verydarkgrayblue);
+    height: 400px;
+    margin-bottom: 100px;
+    margin-top: 30px;
+    display: flex;
+    border-top-right-radius: 80px;
+    border-bottom-left-radius: 80px;
+    align-items: center;
+}
+/* section 2 prt 1 */
+.sec-2 .prt-1 {
+    width: 45%;
+    /* border: 1px solid purple; */
+    flex-basis: 45%;
+}
+
+/* section 2 image */
+.sec-2 .prt-1 .phone{
+    width: 100%;
+    margin-top: -40px;
+    padding-left: 15%;
+}
+/* section 2 prt 2 */
+.sec-2 .prt-2 {
+    flex-basis: 55%;
+    width: 55%;
+    padding-right: 30px;
+}
+.sec-2 .prt-2 p{
+    color: var(--text);
+}
+.sec-2 .prt-2 h3{
+    font-weight: 600;
+    color: var(--text);
+    padding-bottom: 20px;
+}
+/* -------------------------------------section 2 styling ends---- */
+/* -----------------------------------Section 3 styling  begins----------------------------*/
+.sec-3{
+    display: flex;
+    padding: 40px 0px;
+    position: relative;
+    align-items: center;
+    /* border: 1px solid rebeccapurple; */
+}
+/* section 3, col 1 */
+.sec-3 .col-1{
+    flex-basis: 45%;
+    width: 45%;
+    height: auto;
+    /* border: 1px solid blue; */
+}
+/* section 3 image */
+.sec-3 .col-1 img{
+    margin-left: -48%;
+    max-width: 162%;
+}
+.sec-3 .col-2 {
+    flex-basis: 55%;
+    width: 55%;
+    color: var(--Verydarkdesaturatedblue);
+    float: right;
+    padding-right: 10%;
+    padding-left: 20px;
+}
+.sec-3 .col-2 h3{
+    font-weight: 600;
+    padding-bottom: 10px;
+    padding-top: 20px; 
+}
+/* section 3 styling ends */
+ /* footer stylings */
+footer{
+    background-color: var(--footerbackground);
+    color: var(--footertext);
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    font-family: "ubuntu", sans-serif;
+    border-top-right-radius: 50px;
+    position: relative;
+}
+footer ul{
+    padding: 80px 0px;
+    list-style-type: none;
+}
+footer ul .foothead{
+    padding-bottom: 20px;
+    font-weight: 600;
+}
+footer ul li{
+    text-align: left;
+    padding: 5px;
+}
+footer ul li:hover{
+   text-decoration: underline;
+   cursor: pointer;
+}
+/* after footer */
+.attribution { 
+    font-size: 17px;
+    background-color: var(--footerbackground);
+    text-align: center;
+    color: white;
+    font-family: "Ubuntu";
+    margin-top: 0px;
+    border-top: 0px;
+    padding-top: 0px;
+}
+.attribution_big{
+    font-size: 11px; 
+    text-align: center; 
+    color: white; 
+    font-size:60px; 
+    font-weight: 600; 
+    padding-bottom: 0px;
+}
+.attribution a { 
+    color: var(--gradientred); 
+}

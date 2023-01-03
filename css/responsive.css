@@ -1,0 +1,255 @@
+:root{
+    --CTAtext: hsl(356, 100%, 66%);
+    --CTAhoverbackground: hsl(355, 100%, 74%);
+    --headings: hsl(208, 49%, 24%);
+    --text: hsl(0, 0%, 100%);
+    --footertext: hsl(240, 2%, 79%);
+    --dropdown: hsl(240, 6%, 94%);
+    --bodycopy: hsl(207, 13%, 34%);
+    --footerbackground: hsl(240, 10%, 16%);
+    --gradientlightred: hsl(13, 100%, 72%);
+    --gradientred: hsl(353, 100%, 62%);
+    --Verydarkgrayblue: hsl(237, 17%, 21%);
+    --Verydarkdesaturatedblue: hsl(237, 23%, 32%);
+}
+@media only screen and (max-width: 900px) {
+    .sec-3 .col-2 {
+        flex-basis: 55%;
+        width: 55%;
+        padding: 0px 30px ;
+        padding-top: 5%;
+        color: var(--Verydarkdesaturatedblue);
+        float: right;
+        padding-right: 10%;
+    }
+}
+@media (max-width: 850px){
+    nav{
+        display: none;
+    }
+    input[type=checkbox]{
+        display: none;
+    }
+    .mob-div{
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+        padding: 30px 20px;
+    }
+    /* links */
+    .mob-div .links{
+        background-color: #fff;
+        padding: 30px;
+        position: fixed;
+        width: 80%;
+        top: -100%;
+        gap: 0;
+        display: flex;
+        flex-direction: column;
+        transition: .3s ease;
+    } 
+    .mob-div #hamburger:checked ~  .links{
+        top: 70px;
+    }
+    .mob-div .links li{
+        margin: 10px 0;
+    }
+    .mob-div .links label{
+        color: var(--headings);
+        font-family: "Overpass", sans-serif; 
+        font-size: 20px;
+        position: relative;
+    }
+    /* Hamburger  */
+    label .burger{
+        display: block;
+    }
+    div #hamburger:checked ~ .burger img::before{
+        content: "./images/icon-close.svg";
+    }
+
+    /*  dropdown */
+    .product,
+    .company,
+    .connnect{
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        overflow: hidden;
+        max-height: 0;
+        background-color: var(--dropdown);
+    }
+    li #show-product:checked ~ .product,
+    li #show-company:checked ~ .company,
+    li #show-menu:checked ~ .connnect{
+        max-height: 100vh;
+        transition: 0.3s ease;
+    }
+    hr{
+        background-color: var(--bodycopy);
+        width: 80%;
+        margin: 20px auto;
+        opacity: 0.5;
+    }
+    .login{
+        color: var(--Verydarkgrayblue);
+        font-size: 18px;
+        margin: 10px;
+    }
+    .login:hover{
+        color: var(--text);
+        font-size: 18px;
+        padding: 7px 25px;
+        border-radius: 20px;
+        background: linear-gradient(to right, var(--gradientlightred), var(--gradientred));
+    }
+    li .signup{
+        color: var(--text);
+        font-size: 18px;
+        padding: 7px 25px;
+        border-radius: 20px;
+        background: linear-gradient(to right, var(--gradientlightred), var(--gradientred));
+    }
+}
+@media only screen and (max-width: 700px) {
+    body{
+        display: flex;
+        flex-direction: column;
+        margin-right: 0px;
+        overflow-x: hidden;
+    }
+    /* header */
+    header{
+        min-height: 85vh;
+    }
+    /* ends  */
+    /* hero section button */
+    .cntbtn{
+        margin: 10px auto;
+        text-align: center;
+    }
+    /* after nav */
+    .aftnav{
+        padding: 20px 30px;
+    }
+    /* be4 section */
+    .be4sec .head{
+        text-align: center;
+        display: flex;
+        flex-flow: nowrap column;
+        justify-content: center;
+        align-items: center;
+        font-size: 32px; 
+    }
+    /* nav links */
+    nav li a{
+        color: var(--Verydarkgrayblue);
+    }
+    nav .button{
+        display: block;
+        padding: 10px 0px; 
+    }
+    /* login button */
+    nav .button .login{
+        padding: 18px 40px;
+        margin-right: 5px;
+    }
+    nav .button .login:hover{
+        background-color: inherit;
+        border-radius: 30px;
+        color: var(--CTAhoverbackground);
+    } 
+    nav .button  .signup{
+        background-color: var(--text);
+        padding: 18px 40px;
+        border-radius: 30px;
+        color: var(--Verydarkgrayblue);
+    }
+    /* ---------------------------section 1---------- */
+    .sec-1{
+        flex-direction: column-reverse;
+    }
+    .sec-1 .row-2{
+        width: 100%;
+    }
+    /* row 1 */
+    .sec-1 .row-1{
+        padding: 30px;
+        text-align: center;
+    }
+    .sec-1 .row-2 .camera{ 
+        /* margin-right: 0px; */
+        /* padding-right: -800px; */
+        flex-basis: 100%;
+        width: 130%;   
+        position: relative;
+        margin-left: 0px;
+    } 
+/* section 2 */
+    .sec-2{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 150px;
+        height: auto;
+        background-image: url(/images/bg-pattern-circles.svg);
+        background-repeat: no-repeat; 
+        background-position: 0% -60%;
+        background-size: 100%;
+    }
+/* section 2 image */
+    .sec-2 .prt-1 .phone{
+        width: 95%;
+        padding-left: 0%;
+        margin-top: -150px;
+    }
+/* section 2, prt 1 */
+    .sec-2 .prt-1 {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    /* section 2 prt 2 */
+    .sec-2 .prt-2 {
+        flex-basis: 100%;
+        width: 100%;
+        text-align: center;
+        padding: 50px;
+}
+/* section 3 */
+    .sec-3{
+       flex-direction: column;
+    }
+    /* sec3 image */
+    .sec-3 .col-1 img{
+        margin-left: -21%;
+        width: 130%;
+    }
+    /* section one */
+    .sec-3 .col-1{
+        width: 100%;
+        text-align: center;
+    }
+    /* section two */
+    .sec-3 .col-2{
+        width: 100%;
+        text-align: center;
+        padding: 30px;
+    }
+/* footer */
+    footer{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 30px;
+        
+    }
+    footer ul{
+        padding: 20px 0px;
+        list-style-type: none;
+    }
+    footer ul li{
+        text-align: center;
+        padding: 5px;
+    }
+}
