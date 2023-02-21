@@ -26,6 +26,7 @@
 @media (max-width: 850px){
     nav{
         display: none;
+        /* overflow-x: hidden; */
     }
     input[type=checkbox]{
         display: none;
@@ -35,6 +36,8 @@
         justify-content: space-between;
         text-align: center;
         padding: 30px 20px;
+        align-items: center;
+        /* overflow-x: hidden; */
     }
     /* links */
     .mob-div .links{
@@ -44,11 +47,15 @@
         width: 80%;
         top: -100%;
         gap: 0;
+        left: auto;
+        right: auto;
         display: flex;
         flex-direction: column;
         transition: .3s ease;
+        border-radius: 20px;
+        /* overflow-x: hidden; */
     } 
-    .mob-div #hamburger:checked ~  .links{
+    .mob-div #hamburger:checked ~ .links{
         top: 70px;
     }
     .mob-div .links li{
@@ -64,10 +71,6 @@
     label .burger{
         display: block;
     }
-    div #hamburger:checked ~ .burger img::before{
-        content: "./images/icon-close.svg";
-    }
-
     /*  dropdown */
     .product,
     .company,
@@ -78,13 +81,27 @@
         overflow: hidden;
         max-height: 0;
         background-color: var(--dropdown);
+        border-radius: 20px;
     }
+
+    #mob-link li .center {
+        display: flex;
+        justify-content: center;
+    }
+
     li #show-product:checked ~ .product,
     li #show-company:checked ~ .company,
     li #show-menu:checked ~ .connnect{
         max-height: 100vh;
         transition: 0.3s ease;
     }
+
+    li #show-product:checked ~ label svg,
+    li #show-company:checked ~ label svg,
+    li #show-menu:checked ~  label svg{
+        transform: rotate(180deg);
+    }
+
     hr{
         background-color: var(--bodycopy);
         width: 80%;
@@ -121,6 +138,7 @@
     /* header */
     header{
         min-height: 85vh;
+        /* overflow-x: hidden; */
     }
     /* ends  */
     /* hero section button */
@@ -219,6 +237,7 @@
 /* section 3 */
     .sec-3{
        flex-direction: column;
+       overflow-x: hidden;
     }
     /* sec3 image */
     .sec-3 .col-1 img{
