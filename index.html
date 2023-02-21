@@ -19,7 +19,9 @@
             </ul>
             <ul class="links">
               <li>
-                <label for="ul">Product</label><img href="./images/icon-arrow-light.svg">
+                <label for="ul">Product
+                  <svg xmlns="http://www.w3.org/2000/svg" width="10" height="7"  aria-hidden="true"><path fill="none" stroke="#fff" stroke-width="2" d="M1 1l4 4 4-4"/></svg>
+                </label>
                 <ul>
                   <li><a href="#">Overview</a></li>
                   <li><a href="#">Pricing</a></li>
@@ -29,7 +31,9 @@
                 </ul>
               </li>
               <li>
-                  <label for="ul">Company </label>
+                  <label for="ul">Company
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="7"  aria-hidden="true"><path fill="none" stroke="#fff" stroke-width="2" d="M1 1l4 4 4-4"/></svg>
+                  </label>
                 <ul>
                   <li><a href="#">About</a></li>
                   <li><a href="#">Team</a></li>
@@ -38,7 +42,9 @@
                 </ul>
               </li>
               <li>
-                <label for="ul">Connect</label>
+                <label for="ul">Connect 
+                  <svg xmlns="http://www.w3.org/2000/svg" width="10" height="7"  aria-hidden="true"><path fill="none" stroke="#fff" stroke-width="2" d="M1 1l4 4 4-4"/></svg>
+                </label>
                   <ul>
                     <li><a href="#">LinkedIn</a></li>
                     <li><a href="#">Newsletter</a></li>
@@ -56,10 +62,12 @@
           <ul class="lg">
             <li><img src="./images/logo.svg" alt="logo"></li>
           </ul>
-          <ul class="links">
+          <ul id="mob-link" class="links">
             <li>
-              <input type="checkbox" id="show-product">
-              <label for="show-product">Product</label>
+              <input type="checkbox"  id="show-product">
+              <label class="center" for="show-product">Product 
+                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="7"  aria-hidden="true"><path fill="none" stroke="hsl(356, 100%, 66%)" stroke-width="2" d="M1 1l4 4 4-4"/></svg>
+              </label>
               <ul class="product">
                 <li><a href="#">Overview</a></li>
                 <li><a href="#">Pricing</a></li>
@@ -69,8 +77,10 @@
               </ul>
             </li>
             <li>
-              <input type="checkbox" id="show-company">
-              <label for="show-company">Company </label>
+              <input type="checkbox" onclick="check2()" id="show-company">
+              <label class="center" for="show-company">Company 
+                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="7"  aria-hidden="true"><path fill="none" stroke="hsl(356, 100%, 66%)" stroke-width="2" d="M1 1l4 4 4-4"/></svg>
+              </label>
               <ul class="company">
                 <li><a href="#">About</a></li>
                 <li><a href="#">Team</a></li>
@@ -79,8 +89,10 @@
               </ul>
             </li>
             <li>
-              <input type="checkbox"  id="show-menu">
-              <label for="show-menu">Connect</label>
+              <input type="checkbox" onclick="check3()" id="show-menu">
+              <label class="center" for="show-menu">Connect
+                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="7"  aria-hidden="true"><path fill="none" stroke="hsl(356, 100%, 66%)" stroke-width="2" d="M1 1l4 4 4-4"/></svg>
+              </label>
                 <ul class="connnect">
                   <li><a href="#">LinkedIn</a></li>
                   <li><a href="#">Newsletter</a></li>
@@ -93,7 +105,8 @@
           </ul>
           <div>
             <input type="checkbox"  id="hamburger">
-            <label for="hamburger" class="burger"><img src="./images/icon-hamburger.svg" alt="icon-hamburger"></label>
+            <label for="hamburger" class="burger"><img id="ham-img" src="./images/icon-hamburger.svg" alt="icon-hamburger"></label>
+            <label class="burger"><img id="ham-close" src="./images/icon-close.svg" alt="icon-close"></label>
           </div>  
       </div>      
       <div class="aftnav">
@@ -181,24 +194,47 @@
     </footer>
     <div class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Anointed Kayode</a>.
+      Coded by <a href="#">Code Rio</a>.
     </div>
 </body>
 <script>
   // Declearing variables
-  let hamburger = document.querySelector(".hamburger");
-    let navmenu   = document.querySelector("nav");
+  let hamburger     = document.getElementById('hamburger');
+  let navmenu       = document.querySelector(".mob-div .links");
+  let showProduct   = document.getElementById('show-product');
+  let closeBtn      = document.getElementById('ham-close');
+  let showCompany   = document.getElementById('show-company');
+  let showMenu      = document.getElementById('show-menu');
 
-    hamburger.addEventListener("click", () => {
-        hamburger.classList.toggle("active");
-        navmenu.classList.toggle("active");
-    });
+    hamburger.onclick = () => {
+      document.getElementById('mob-link').style.top = '90px';
+      document.getElementById('ham-img').style.display = 'none';
+      document.getElementById('ham-close').style.display = 'block';
+    };
 
-    document.querySelectorAll(".nav-link").forEach(n =>
-        n.addEventListener("click", () => {
-            hamburger.classList.remove("active");
-            navmenu.classList.remove("active")
-        })
-    )
+    closeBtn.onclick = () => {
+      document.getElementById('mob-link').style.top = '-100%';
+      document.getElementById('ham-img').style.display = 'block';
+      document.getElementById('ham-close').style.display = 'none';
+    }
+
+    // if product is checked, uncheck others
+    showProduct.onclick = () => {
+      showCompany.checked = false;
+      showMenu.checked = false;
+    }
+     
+    // if company is checked, uncheck others
+    showCompany.onclick = () => {
+       showProduct.checked = false;
+        showMenu.checked = false;
+    }
+    
+    // if menu is checked, uncheck others
+    showMenu.onclick = () => {
+      showCompany.checked = false;
+        showProduct.checked = false;
+    }    
+    
 </script>
 </html>
